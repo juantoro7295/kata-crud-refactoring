@@ -14,19 +14,17 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "todo")
-public class Todo {
+@Table(name = "todolist")
+public class TodoList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "todo_id", length = 200)
+    @Column(name= "id_list", length = 100)
     private Long id;
 
     @NotEmpty
     @Size(min = 5, max = 100, message = "Debes tener entre 5 y 100 caracteres")
-    @Column(name = "name_todo", length = 100)
+    @Column(name= "name_list", length = 100)
     private String name;
 
-    @Column(name = "completed_todo", nullable = false)
-    private boolean completed;
 
 }
