@@ -1,5 +1,6 @@
 package co.com.sofka.crud.service;
 
+import co.com.sofka.crud.dto.TodoListDTO;
 import co.com.sofka.crud.model.TodoList;
 
 import java.util.List;
@@ -8,18 +9,18 @@ import java.util.Optional;
 public interface TodoListService {
 
     //listar
-    List<TodoList> list();
+    List<TodoListDTO> list();
 
     //save
-    TodoList save(TodoList todoList);
+    TodoListDTO save(TodoListDTO todoListDTO);
 
     //update
-    TodoList update(TodoList todoList, Long id);
+    TodoListDTO update(TodoListDTO todoListDTO, Long id);
 
     //delete
     void delete(Long id);
 
     //get
-    Optional<TodoList> get(Long id);
+    TodoListDTO get(Long id);
 
 }
