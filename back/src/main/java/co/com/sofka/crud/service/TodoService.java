@@ -1,30 +1,25 @@
 package co.com.sofka.crud.service;
 
+
+import co.com.sofka.crud.dto.TodosDTO;
 import co.com.sofka.crud.model.Todo;
-import co.com.sofka.crud.repository.TodoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class TodoService {
+import java.util.List;
 
-    @Autowired
-    private TodoRepository repository;
+public interface TodoService {
+    //listar
+    List<TodosDTO> list();
 
-    public Iterable<Todo> list(){
-        return repository.findAll();
-    }
+    //save
+    TodosDTO save(TodosDTO todo);
 
-    public Todo save(Todo todo){
-        return repository.save(todo);
-    }
+    //update
+    Todo update(Todo todo, Long id);
 
-    public void delete(Long id){
-        repository.delete(get(id));
-    }
+    //delete
+    void delete(Long id);
 
-    public Todo get(Long id){
-         return repository.findById(id).orElseThrow();
-    }
+    //get
+    Todo get(Long id);
 
 }
